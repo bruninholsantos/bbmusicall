@@ -1,16 +1,14 @@
 # BB Musicall – O Gigante e o Anão
 
-Site de lançamento do livro **O Gigante e o Anão – A Canção da Amizade**, com pedidos do livro e do kit pelo WhatsApp.
+Site de lançamento do livro **O Gigante e o Anão – A Canção da Amizade** (organizado por Patrícia Sales Neri de Andrade e Amauri Rodrigo de Andrade), com pedidos do livro e do kit pelo WhatsApp.
 
-## Trocar o número do WhatsApp
-No fim do `index.html`, altere a linha:
+## Trocar o QR Code da música
+1. Substitua o arquivo `qr-musica.png` pelo QR Code correto (mesmo nome).
+2. No fim do `index.html`, troque o link do botão "Ouvir a música":
 
 ```js
-const WHATSAPP = "5511999999999"; // DDI + DDD + número
+const MUSICA_URL = "https://bbmusicall.vercel.app/#musica"; // trocar pelo link da música
 ```
 
-e o número exibido em `<code id="numero">`.
-
-## Publicar
-Em **Settings → Pages**, escolha a branch `main` e a pasta `/ (root)`. O site fica em
-https://bruninholsantos.github.io/bbmusicall/
+## Trocar o número do WhatsApp
+No fim do `index.html`, altere `const WHATSAPP = "5511968657212";` (DDI + DDD + número) e o número exibido em `<code id="numero">`.

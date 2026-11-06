@@ -206,6 +206,30 @@ footer{position:relative;background:var(--hill);color:#fff;padding-block:10px 11
 footer .hills{top:-150px;bottom:auto;height:152px}
 footer p{position:relative;z-index:2;font-family:var(--display);font-size:1.15rem}
 
+/* música / QR */
+.musica{background:var(--pink)}
+.musica .edge{fill:var(--pink)}
+.qr-card{display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:center;max-width:960px;margin:0 auto}
+.qr-txt{min-width:0}
+.qr-frame{position:relative;background:#fff;padding:22px;border-radius:32px;box-shadow:0 0 0 8px var(--sun),0 0 0 16px var(--magenta),0 30px 50px -20px var(--shadow);transform:rotate(-3deg);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.qr-frame:hover{transform:rotate(0) scale(1.04)}
+.qr-frame img{display:block;width:220px;height:220px;max-width:100%;image-rendering:pixelated}
+.qn{position:absolute;font-family:var(--display);font-weight:900;font-size:2rem;line-height:1;animation:bob 3.6s ease-in-out infinite}
+.qn.n1{top:-44px;left:-14px;color:var(--blue)}
+.qn.n2{top:-30px;right:-30px;color:var(--magenta);animation-delay:-1.2s}
+.qn.n3{bottom:-40px;right:12px;color:var(--violet);animation-delay:-2.4s}
+.eq{display:flex;align-items:flex-end;gap:6px;height:34px;margin-top:22px}
+.eq i{width:9px;border-radius:5px;background:var(--magenta);animation:eq 1s ease-in-out infinite;height:30%}
+.eq i:nth-child(2n){background:var(--blue);animation-delay:-.3s}
+.eq i:nth-child(3n){background:var(--grass);animation-delay:-.55s}
+.eq i:nth-child(4n){background:var(--sun);animation-delay:-.75s}
+@keyframes eq{50%{height:100%}}
+.btn-play{background:var(--magenta);color:#fff;box-shadow:0 7px 0 color-mix(in srgb,var(--magenta) 55%,#000)}
+.btn-play svg{width:22px;height:22px}
+.sobre h2{font-size:clamp(2rem,4.4vw,2.9rem)}
+.credits{margin-top:18px;font-size:.92rem;color:var(--ink-soft);padding-top:14px;border-top:2px dashed color-mix(in srgb,var(--blue) 30%,transparent);max-width:58ch}
+@media (max-width:860px){.qr-card{grid-template-columns:1fr;justify-items:center;text-align:center;gap:60px}.qr-txt .eq,.qr-txt .actions{justify-content:center}}
+
 /* botão flutuante */
 .fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;width:64px;height:64px;border-radius:50%;background:var(--wa);color:var(--wa-ink);display:grid;place-items:center;box-shadow:0 12px 26px -6px rgba(0,0,0,.35);text-decoration:none;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
 .fab:hover{transform:scale(1.1) rotate(-8deg)}
@@ -360,12 +384,31 @@ footer p{position:relative;z-index:2;font-family:var(--display);font-size:1.15re
         <h2>Ler, colorir e cantar junto</h2>
         <p class="intro">Cada kit é preparado com muito amor e carinho para levar diversão, aprendizado e amizade até a sua casa.</p>
         <ul class="items">
-          <li><span class="dot">♪</span><div><b>O livro</b><span>O Gigante e o Anão – A Canção da Amizade.</span></div></li>
+          <li><span class="dot">♪</span><div><b>O livro</b><span>O Gigante e o Anão – A Canção da Amizade, organizado por Patrícia Sales Neri de Andrade e Amauri Rodrigo de Andrade.</span></div></li>
           <li><span class="dot">✎</span><div><b>Livro de colorir</b><span>Os personagens da história para pintar. Pinte, cante e se divirta!</span></div></li>
           <li><span class="dot">♥</span><div><b>Diversão em família</b><span>Um presente para ler e brincar com quem você ama.</span></div></li>
         </ul>
         <div class="status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>Os kits estão sendo montados e a entrega está quase chegando!</div>
         <div class="actions"><a class="btn btn-wa js-wa" data-msg="kit" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Quero o kit</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="musica" id="musica">
+    <svg class="edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><use href="#edge"/></svg>
+    <div class="wrap">
+      <div class="qr-card reveal">
+        <div class="qr-frame">
+          <span class="qn n1" aria-hidden="true">♪</span><span class="qn n2" aria-hidden="true">♫</span><span class="qn n3" aria-hidden="true">♬</span>
+          <img src="qr-musica.png" alt="QR Code que leva à música do livro" width="220" height="220">
+        </div>
+        <div class="qr-txt">
+          <span class="eyebrow">A música do livro</span>
+          <h2>Ouça a Canção da Amizade</h2>
+          <p class="intro">O livro tem uma música só dele! Aponte a câmera do celular para o QR Code e cante junto com o Gigante e o Anão.</p>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="actions"><a class="btn btn-play js-musica" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z"/></svg>Ouvir a música</a></div>
+        </div>
       </div>
     </div>
   </section>
@@ -387,7 +430,7 @@ footer p{position:relative;z-index:2;font-family:var(--display);font-size:1.15re
         <div>
           <h3>Venha celebrar esse lançamento com a gente!</h3>
           <p>Peça o seu pelo WhatsApp. Se o botão não abrir, chame neste número:</p>
-          <div class="num"><code id="numero">(11) 99999-9999</code><button class="copy" id="copiar" type="button">Copiar número</button></div>
+          <div class="num"><code id="numero">(11) 96865-7212</code><button class="copy" id="copiar" type="button">Copiar número</button></div>
         </div>
         <div class="actions">
           <a class="btn btn-wa js-wa" data-msg="livro" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Pedir o livro</a>
@@ -397,13 +440,15 @@ footer p{position:relative;z-index:2;font-family:var(--display);font-size:1.15re
     </div>
   </section>
 
-  <section class="autores">
+  <section class="autores sobre">
     <svg class="edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><use href="#edge"/></svg>
     <div class="wrap reveal">
       <div class="seal"><img src="logo.webp" alt="Logo BB Musicall"></div>
       <div>
-        <span class="eyebrow">Organizadores</span>
-        <p class="names">Patrícia Sales Neri de Andrade<br>Amauri Rodrigo de Andrade<small>Uma publicação BB Musicall</small></p>
+        <span class="eyebrow">Quem somos</span>
+        <h2>BB Musicall</h2>
+        <p class="intro">Música, histórias e diversão para crianças e famílias. O Gigante e o Anão é o nosso novo livro, feito para ler, cantar e colorir junto.</p>
+        <p class="credits">Livro organizado por Patrícia Sales Neri de Andrade e Amauri Rodrigo de Andrade.</p>
       </div>
     </div>
   </section>
@@ -417,11 +462,13 @@ footer p{position:relative;z-index:2;font-family:var(--display);font-size:1.15re
 <a class="fab js-wa" data-msg="livro" href="#" target="_blank" rel="noopener" aria-label="Fazer pedido pelo WhatsApp"><svg><use href="#wa"/></svg></a>
 
 <script>
-const WHATSAPP = "5511999999999"; // DDI + DDD + número
+const WHATSAPP = "5511968657212"; // DDI + DDD + número
 const MSGS = {
   livro: "Olá! Vi o site e quero garantir o meu exemplar do livro O Gigante e o Anão – A Canção da Amizade 📚🎶",
   kit: "Olá! Vi o site e quero o kit de O Gigante e o Anão (livro + livro de colorir) 🎁🎶"
 };
+const MUSICA_URL = "https://bbmusicall.vercel.app/#musica"; // trocar pelo link da música
+document.querySelectorAll(".js-musica").forEach(a=>a.href=MUSICA_URL);
 document.querySelectorAll(".js-wa").forEach(a=>{
   a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(MSGS[a.dataset.msg] || MSGS.livro);
 });
